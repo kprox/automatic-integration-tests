@@ -29,6 +29,15 @@ public abstract class BasePage extends FluentWebDriverPage {
     }
 
     /**
+     * Maximize the browser and access the provided URL
+     */
+    public void go(String URL) {
+        manage().window().maximize();
+        get(URL);
+        manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    }
+
+    /**
      * Returns the page URL
      *
      * @return

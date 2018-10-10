@@ -6,7 +6,12 @@ As a user
 I want to be able to check or uncheck the local pickup option
 So that I can decide wether to have it or not
 
-GivenStories: Login.story
+Lifecycle:
+Before:
+Scope: STORY
+
+Given I logged in using an impersonalization link
+Then the Nickname shows a valid test user nickname
 
 Scenario: Verify Local Pickup checkbox
 

@@ -6,6 +6,11 @@ As a user
 I want to login using valid credentials
 So that I can access MyML sections
 
+Scenario: Login via link
+
+When I login using an impersonalization link
+Then the Nickname shows a valid test user nickname
+
 Scenario: Login with valid credentials
 
 Given I am on Home page

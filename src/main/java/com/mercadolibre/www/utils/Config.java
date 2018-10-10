@@ -13,9 +13,11 @@ public class Config {
     private final static String PROPERTIES_FILE = "ConfigData.properties";
 
     //KEYS
+    private final static String ID = "test_user_id";
     private final static String USERNAME = "test_user_name";
     private final static String PASSWORD = "test_user_pass";
     private final static String NICKNAME = "test_user_nick";
+    private final static String LOGIN_LINK = "link";
 
     public Config() {
         props = new Properties();
@@ -26,6 +28,15 @@ public class Config {
         } catch (IOException e) {
             System.out.println("ERROR: Could not load Properties file");
         }
+    }
+
+    /**
+     * Returns Test User ID
+     *
+     * @return
+     */
+    public String getTestUserId() {
+        return props.getProperty(ID);
     }
 
     /**
@@ -53,5 +64,15 @@ public class Config {
      */
     public String getTestUserNickname() {
         return props.getProperty(NICKNAME);
+    }
+
+    /**
+     * Returns the Impersonalization Link from the system properties provided
+     * Can be null
+     *
+     * @return
+     */
+    public String getLinkFromSystemProps() {
+        return System.getProperty(LOGIN_LINK, null);
     }
 }

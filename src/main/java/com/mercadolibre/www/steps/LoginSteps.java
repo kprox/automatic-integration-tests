@@ -2,7 +2,10 @@ package com.mercadolibre.www.steps;
 
 import com.mercadolibre.www.pages.LoginPage;
 import com.mercadolibre.www.utils.Config;
+import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.When;
+
+import static junit.framework.TestCase.fail;
 
 /**
  * Created by kprox
@@ -17,6 +20,19 @@ public class LoginSteps extends BaseSteps<LoginPage> {
      */
     public LoginSteps(LoginPage page, Config config) {
         super(page, config);
+    }
+
+    @Given("I logged in using an impersonalization link")
+    @When("I login using an impersonalization link")
+    public void loginWithLink() {
+        String link = config.getLinkFromSystemProps();
+
+        if (link != null) {
+            System.out.println("/// LINK: " + link);
+            page.go(link);
+        } else {
+            fail("Couldn't access impersonalization link");
+        }
     }
 
     @When("I use a test username")
