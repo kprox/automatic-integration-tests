@@ -32,6 +32,10 @@ Para correr un Story en particular (ej. 'Modify'):
 
 `mvn install -Dstory=Modify`
 
+Para evitar problemas al correr algunos tests, por el captcha, se debe agregar como dato un link de impersonalización:
+
+`mvn install -Dstory=Modify -Dlink="LINK_DE_IMPERSONALIZACION"`
+
 ## Reports and Results
 
 Luego de haber corrido los tests deseados, dentro de la siguiente ruta se encontrará el archivo HTML con el reporte de la corrida:
