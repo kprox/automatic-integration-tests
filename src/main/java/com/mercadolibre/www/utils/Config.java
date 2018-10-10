@@ -17,7 +17,9 @@ public class Config {
     private final static String USERNAME = "test_user_name";
     private final static String PASSWORD = "test_user_pass";
     private final static String NICKNAME = "test_user_nick";
-    private final static String LOGIN_LINK = "link";
+    private final static String ITEM_ID = "test_item_id";
+    private final static String SYSTEM_ITEM_ID = "item";
+    private final static String SYSTEM_LOGIN_LINK = "link";
 
     public Config() {
         props = new Properties();
@@ -67,12 +69,22 @@ public class Config {
     }
 
     /**
+     * Returns the Item ID from the system properties provided
+     * Cannot be null, item from ConfigData file is returned by default
+     *
+     * @return
+     */
+    public String getTestItemId() {
+        return System.getProperty(SYSTEM_ITEM_ID, props.getProperty(ITEM_ID));
+    }
+
+    /**
      * Returns the Impersonalization Link from the system properties provided
      * Can be null
      *
      * @return
      */
     public String getLinkFromSystemProps() {
-        return System.getProperty(LOGIN_LINK, null);
+        return System.getProperty(SYSTEM_LOGIN_LINK, null);
     }
 }

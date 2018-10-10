@@ -36,6 +36,12 @@ Para evitar problemas al correr algunos tests, por el captcha, se debe agregar c
 
 `mvn install -Dstory=Modify -Dlink="LINK_DE_IMPERSONALIZACION"`
 
+#### Full list of parameters (all starting with -D)
+
+- story (ej. Modify)
+- link (Link de impersonalización)
+- item (Item ID)
+
 ## Reports and Results
 
 Luego de haber corrido los tests deseados, dentro de la siguiente ruta se encontrará el archivo HTML con el reporte de la corrida:

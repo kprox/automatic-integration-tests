@@ -1,5 +1,6 @@
 package com.mercadolibre.www.pages;
 
+import com.mercadolibre.www.utils.Config;
 import org.jbehave.web.selenium.FluentWebDriverPage;
 import org.jbehave.web.selenium.WebDriverProvider;
 
@@ -10,13 +11,16 @@ import java.util.concurrent.TimeUnit;
  */
 public abstract class BasePage extends FluentWebDriverPage {
 
+    protected Config config;
+
     /**
      * Public constructor
      *
      * @param driverProvider
      */
-    public BasePage(WebDriverProvider driverProvider) {
+    public BasePage(WebDriverProvider driverProvider, Config config) {
         super(driverProvider);
+        this.config = config;
     }
 
     /**

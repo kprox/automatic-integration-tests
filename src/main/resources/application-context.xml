@@ -13,6 +13,7 @@
 
     <bean id="homePage" class="com.mercadolibre.www.pages.HomePage">
         <constructor-arg ref="driverProvider"/>
+        <constructor-arg ref="config"/>
     </bean>
 
     <bean id="homeSteps" class="com.mercadolibre.www.steps.HomeSteps">
@@ -22,6 +23,7 @@
 
     <bean id="loginPage" class="com.mercadolibre.www.pages.LoginPage">
         <constructor-arg ref="driverProvider"/>
+        <constructor-arg ref="config"/>
     </bean>
 
     <bean id="loginSteps" class="com.mercadolibre.www.steps.LoginSteps">
@@ -31,6 +33,7 @@
 
     <bean id="modifyPage" class="com.mercadolibre.www.pages.ModifyPage">
         <constructor-arg ref="driverProvider"/>
+        <constructor-arg ref="config"/>
     </bean>
 
     <bean id="modifySteps" class="com.mercadolibre.www.steps.ModifySteps">
