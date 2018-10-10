@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="config" class="com.mercadolibre.www.utils.Config"/>
+
+    <bean id="driverProvider" class="org.jbehave.web.selenium.FirefoxWebDriverProvider"/>
+
+    <bean id="webDriverProvider" class="org.jbehave.web.selenium.PerStoryWebDriverSteps">
+        <constructor-arg ref="driverProvider"/>
+    </bean>
+
+    <bean id="homePage" class="com.mercadolibre.www.pages.HomePage">
+        <constructor-arg ref="driverProvider"/>
+    </bean>
+
+    <bean id="homeSteps" class="com.mercadolibre.www.steps.HomeSteps">
+        <constructor-arg ref="homePage"/>
+        <constructor-arg ref="config"/>
+    </bean>
+
+    <bean id="loginPage" class="com.mercadolibre.www.pages.LoginPage">
+        <constructor-arg ref="driverProvider"/>
+    </bean>
+
+    <bean id="loginSteps" class="com.mercadolibre.www.steps.LoginSteps">
+        <constructor-arg ref="loginPage"/>
+        <constructor-arg ref="config"/>
+    </bean>
+
+    <bean id="modifyPage" class="com.mercadolibre.www.pages.ModifyPage">
+        <constructor-arg ref="driverProvider"/>
+    </bean>
+
+    <bean id="modifySteps" class="com.mercadolibre.www.steps.ModifySteps">
+        <constructor-arg ref="modifyPage"/>
+        <constructor-arg ref="config"/>
+    </bean>
+</beans>
