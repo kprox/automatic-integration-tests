@@ -29,7 +29,7 @@ public abstract class BasePage extends FluentWebDriverPage {
     public void go() {
         manage().window().maximize();
         get(getPageURL());
-        manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
     /**
@@ -38,7 +38,7 @@ public abstract class BasePage extends FluentWebDriverPage {
     public void go(String URL) {
         manage().window().maximize();
         get(URL);
-        manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
     /**

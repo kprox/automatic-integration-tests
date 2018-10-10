@@ -28,7 +28,6 @@ public class LoginSteps extends BaseSteps<LoginPage> {
         String link = config.getLinkFromSystemProps();
 
         if (link != null) {
-            System.out.println("/// LINK: " + link);
             page.go(link);
         } else {
             fail("Couldn't access impersonalization link");
