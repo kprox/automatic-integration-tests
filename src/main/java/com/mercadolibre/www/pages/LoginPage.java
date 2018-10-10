@@ -1,5 +1,6 @@
 package com.mercadolibre.www.pages;
 
+import com.mercadolibre.www.utils.Config;
 import org.jbehave.web.selenium.WebDriverProvider;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -24,8 +25,8 @@ public class LoginPage extends BasePage {
      *
      * @param driverProvider
      */
-    public LoginPage(WebDriverProvider driverProvider) {
-        super(driverProvider);
+    public LoginPage(WebDriverProvider driverProvider, Config config) {
+        super(driverProvider, config);
     }
 
     @Override

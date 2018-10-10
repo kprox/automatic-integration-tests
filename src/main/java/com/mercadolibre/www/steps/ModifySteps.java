@@ -32,6 +32,12 @@ public class ModifySteps extends BaseSteps<ModifyPage> {
         page.go();
     }
 
+    @Given("I am on Modify page with the item $itemId")
+    @When("I go to Modify page with the item $itemId")
+    public void accessPage(String itemId) {
+        page.goWithItemId(itemId);
+    }
+
     @When("I click on Local Pickup checkbox")
     public void clickOnLocalPickupCheckbox() {
         page.getLocalPickupCheckbox().click();
