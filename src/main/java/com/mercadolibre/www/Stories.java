@@ -78,12 +78,7 @@ public class Stories extends JUnitStories {
 
     @Override
     protected List<String> storyPaths() {
-        return new StoryFinder()
-                .findPaths(
-                        codeLocationFromClass(this.getClass()).getFile(),
-                        asList("**/" + System.getProperty("story", "*") + ".story"),
-                        null
-                );
+        return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()).getFile(),
+                asList("**/" + System.getProperty("story", "*") + ".story"), null);
     }
-
 }
